@@ -1,0 +1,11 @@
+---
+- name: Create a forward DNS zone called
+  infoblox.nios_modules.nios_zone:
+    name: "{{ item.name }}"
+    grid_primary:
+    - name: "{{ item.grid_primary }}"
+    comment: "{{ item.comment }}"
+    state: "{{ item.state }}"
+    provider: "{{ nios_provider }}"
+  loop: "{{ zones }}"
+    

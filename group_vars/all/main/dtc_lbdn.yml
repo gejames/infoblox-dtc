@@ -1,0 +1,12 @@
+---
+lbdn:
+  - name: webservers_lbdn
+    lb_method: GLOBAL_AVAILABILITY
+    pool: webservers
+    ratio: 2
+    ttl: 100
+    zone: lab.local
+    pattern: '*.lab.local'
+    type: A
+    comment: Managed by Ansible
+    state: present

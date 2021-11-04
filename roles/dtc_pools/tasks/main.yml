@@ -1,0 +1,10 @@
+---
+- name: Create pool.yml playbook
+  template:
+    src: "pools.j2"
+    dest: "pools.yml"
+    lstrip_blocks: yes
+  with_items: '[{{ servers }}, {{ pools }}]'
+
+- name: create pools
+  include_tasks: pools.yml

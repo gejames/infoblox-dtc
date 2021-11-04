@@ -1,0 +1,17 @@
+---
+pools:
+  - name: webservers
+    lb_method: ROUND_ROBIN
+    comment: Managed by Ansible
+    state: present
+    monitor_name: monitor1
+    monitors: 
+      type: icmp
+      
+  - name: appservers
+    lb_method: ROUND_ROBIN
+    comment: Managed by Ansible
+    state: present
+    monitor_name: monitor1
+    monitors: 
+      type: icmp     

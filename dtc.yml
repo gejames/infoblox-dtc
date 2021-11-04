@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: localhost
+  gather_facts: false
+
+  collections:
+    - infoblox.nios_modules
+
+  roles:
+    - nios_zones
+    - dtc_servers
+    - dtc_pools
+    - dtc_lbdn
+    - dtc_restart
+
+
+    
+  
+    

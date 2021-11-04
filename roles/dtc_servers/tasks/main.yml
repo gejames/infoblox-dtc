@@ -1,0 +1,9 @@
+---
+- name: create DTC server
+  infoblox.nios_modules.nios_dtc_server:
+    name: "{{ item.name }}"
+    host: "{{ item.ip }}"
+    comment: "{{ item.comment }}"
+    state: "{{ item.state }}"
+    provider: "{{ nios_provider }}"
+  loop: "{{ servers }}"

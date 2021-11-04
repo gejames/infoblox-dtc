@@ -1,0 +1,19 @@
+---
+  - name: create DTC LBDN
+    infoblox.nios_modules.nios_dtc_lbdn:
+      name: "{{ item.name }}"
+      lb_method: "{{ item.lb_method }}"
+      pools:
+      - pool: "{{ item.pool }}"
+        ratio: "{{ item.ratio }}"
+      ttl: "{{ item.ttl }}"
+      auth_zones: 
+      - "{{ item.zone }}"
+      patterns: 
+      - "{{ item.pattern }}"
+      types:
+      - "{{ item.type }}"
+      comment: "{{ item.comment }}"
+      state: "{{ item.state }}"
+      provider: "{{ nios_provider }}"
+    loop: "{{ lbdn }}"

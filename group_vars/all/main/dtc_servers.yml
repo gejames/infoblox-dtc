@@ -1,0 +1,26 @@
+---
+servers:
+  - name: SERVER62
+    ip: 192.168.50.62
+    comment: Managed by Ansible
+    ratio: 1
+    type: webservers
+    state: present
+  - name: SERVER63
+    ip: 192.168.50.63
+    ratio: 1
+    type: webservers
+    comment: Managed by Ansible
+    state: present      
+  - name: SERVER73
+    ip: 192.168.50.73
+    ratio: 1
+    type: appservers
+    comment: Manged by Ansible
+    state: present 
+  - name: SERVER74
+    ip: 192.168.50.74
+    ratio: 1
+    type: appservers
+    comment: Managed by Ansible
+    state: present           

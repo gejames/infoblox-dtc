@@ -1,0 +1,6 @@
+---
+zones:
+  - name: lab.local
+    grid_primary: infoblox.local
+    comment: Managed by Ansible
+    state: present

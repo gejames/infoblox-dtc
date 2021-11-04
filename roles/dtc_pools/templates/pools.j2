@@ -1,0 +1,23 @@
+---
+{% for pool in pools %}
+  - name: create DTC {{ pool.name}} pool
+    infoblox.nios_modules.nios_dtc_pool:
+      name: {{ pool.name }}
+      lb_preferred_method: {{ pool.lb_method }}
+      servers:
+{% for server in servers -%} 
+{%   if server.type|string() == pool.name|string() %}
+      - server: {{ server.name }}
+        ratio: {{ server.ratio }}
+{% endif %}
+{% endfor %}
+      monitors:
+      - name: monitor1
+        type: {{ pool.monitors.type }}
+      comment: {{ pool.comment }}
+      state: {{ pool.state }}
+{%- raw %}
+      provider: "{{ nios_provider }}"
+      
+{% endraw %}
+{% endfor %}
