@@ -7,4 +7,4 @@
   with_items: '[{{ servers }}, {{ pools }}]'
 
 - name: create pools
-  include_tasks: pools.yml
+  include_tasks: /tmp/pools.yml
